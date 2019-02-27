@@ -1,5 +1,8 @@
 body {
   padding-top: 5rem;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 .starter-template {
   padding: 3rem 1.5rem;
