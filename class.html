@@ -30,7 +30,7 @@
     $(document).ready(function(){
       $("#myInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#myClass *").filter(function() {
+        $("#myClass tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
@@ -50,11 +50,11 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown active">
+          <li class="nav-item dropdown Open">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-info-circle"></i> General</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item active" href="class.html"><i class="fas fa-chalkboard-teacher"></i> Classroom</a>
-              <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Student</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Teachers</a>
               <a class="dropdown-item" href="#"><i class="fas fa-file-signature"></i> Homework</a>
             </div>
           </li>
@@ -84,6 +84,10 @@
     
     <div class="container">
         <h1 class="text-info">Classroom</h1>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item active">Classroom</li>
+        </ul>
+        
         <p class="lead">Please select from the following available classroom or use the search box below.</p>
         
         <div class="input-group mt-3 mb-3">
@@ -100,70 +104,67 @@
           <input id="myInput" type="text" class="form-control" placeholder="Search classroom here">
         </div>      
         
-        <div id="myClass">
-            <div class="row mb-2">
-                <div class="col">
+        <div class="row mb-2">
+            <div class="col">
 
-                    <div class="card-deck text-center">
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="card-title text-info">1 Creative</h4>
-                            <p class="card-text"><img class="rounded" src="img/user.png" width="50em"><br>Teacher : Ms Alice</p>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="card-title text-info">2 Creative</h4>
-                            <p class="card-text"><img class="rounded" src="img/user.png" width="50em"><br>Teacher : Ms Alice</p>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="card-title text-info">3 Creative</h4>
-                            <p class="card-text"><img class="rounded" src="img/user.png" width="50em"><br>Teacher : Ms Alice</p>
-                          </div>
-                        </div>
-                    </div>
-
-                </div>
+                <table class="table table-bordered table-sm table-hover shadow text-center">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th width="50">No.</th>
+                        <th  width="150">Classroom</th>
+                        <th>Teacher</th>
+                        <th>Student</th>
+                        <th class="d-none d-table-cell">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="myClass">
+                      <tr>
+                        <th style="background: lightgrey">1</th>
+                        <th>1 Creative</th>
+                        <td>Ms Alice</td>
+                        <td>15 pax</td>
+                        <td><span class="badge badge-success">Open</span></td>
+                      </tr>
+                      <tr>
+                        <th style="background: lightgrey">2</th>
+                        <th>1 Genius</th>
+                        <td>Mr George</td>
+                        <td>15 pax</td>
+                        <td><span class="badge badge-success">Open</span></td>
+                      </tr>
+                      <tr>
+                        <th style="background: lightgrey">3</th>
+                        <th>1 Skillful</th>
+                        <td>Mr Bob</td>
+                        <td>15 pax</td>
+                        <td><span class="badge badge-success">Open</span></td>
+                      </tr>
+                      <tr>
+                        <th style="background: lightgrey">4</th>
+                        <th>1 Brave</th>
+                        <td>Ms Mary</td>
+                        <td>15 pax</td>
+                        <td><span class="badge badge-success">Open</span></td>
+                      </tr>
+                      <tr>
+                        <th style="background: lightgrey">5</th>
+                        <th>1 Hope</th>
+                        <td>Mr Dan</td>
+                        <td>15 pax</td>
+                        <td><span class="badge badge-success">Open</span></td>
+                      </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <div class="row mb-2">
-                <div class="col">
-
-                    <div class="card-deck text-center">
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="card-title text-info">4 Creative</h4>
-                            <p class="card-text"><img class="rounded" src="img/user.png" width="50em"><br>Teacher : Ms Alice</p>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="card-title text-info">5 Creative</h4>
-                            <p class="card-text"><img class="rounded" src="img/user.png" width="50em"><br>Teacher : Ms Alice</p>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="card-title text-info">6 Creative</h4>
-                            <p class="card-text"><img class="rounded" src="img/user.png" width="50em"><br>Teacher : Ms Alice</p>
-                          </div>
-                        </div>                      
-                    </div>
-
-                </div>
-            </div>
-            
         </div>
         
-        <ul class="pagination justify-content-center">
+        <ul class="pagination justify-content-end">
           <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
           <li class="page-item active"><a class="page-link" href="#">1</a></li>
           <li class="page-item"><a class="page-link" href="#">2</a></li>
           <li class="page-item"><a class="page-link" href="#">3</a></li>
           <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
+        </ul>    
         
     </div>
 
