@@ -84,7 +84,7 @@
     
     <div class="container">
         <h1 class="text-info">Classroom</h1>
-        <ul class="breadcrumb">
+        <ul class="breadcrumb d-none d-sm-block">
           <li class="breadcrumb-item active">Classroom</li>
         </ul>
         
@@ -92,8 +92,8 @@
         
         <div class="input-group mt-3 mb-3">
           <div class="input-group-prepend">
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
-              Level
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+              Grade
             </button>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#">One</a>
@@ -101,7 +101,7 @@
               <a class="dropdown-item" href="#">Three</a>
             </div>
           </div>
-          <input id="myInput" type="text" class="form-control" placeholder="Search classroom here">
+          <input id="myInput" type="text" class="form-control" placeholder="Search classroom">
         </div>      
         
         <div class="row mb-2">
@@ -110,7 +110,8 @@
                 <table class="table table-bordered table-hover shadow text-center">
                     <thead class="thead-dark">
                       <tr>
-                        <th  width="150">Classroom</th>
+                        <th class="d-none d-sm-table-cell" width="15">No</th>
+                        <th width="150">Classroom</th>
                         <th>Teacher</th>
                         <th>Student</th>
                         <th class="d-none d-sm-table-cell">Status</th>
@@ -118,32 +119,37 @@
                     </thead>
                     <tbody id="myClass">
                       <tr>
-                        <th>1 Creative</th>
-                        <td>Ms Alice</td>
+                        <th class="d-none d-sm-table-cell bg-secondary text-white">1</th>
+                        <th style="vertical-align: middle">1 Creative</th>
+                        <td style="vertical-align: middle">Ms Alice</td>
                         <td>15 students</td>
                         <td class="d-none d-sm-table-cell"><span class="badge badge-success">Open</span></td>
                       </tr>
                       <tr>
-                        <th>1 Genius</th>
-                        <td>Mr George</td>
+                        <th class="d-none d-sm-table-cell bg-secondary text-white">2</th>
+                        <th style="vertical-align: middle">1 Genius</th>
+                        <td style="vertical-align: middle">Mr George</td>
                         <td>15 students</td>
                         <td class="d-none d-sm-table-cell"><span class="badge badge-success">Open</span></td>
                       </tr>
                       <tr>
-                        <th>1 Skillful</th>
-                        <td>Mr Bob</td>
+                        <th class="d-none d-sm-table-cell bg-secondary text-white">3</th>
+                        <th style="vertical-align: middle">1 Skillful</th>
+                        <td style="vertical-align: middle">Mr Bob</td>
                         <td>15 students</td>
                         <td class="d-none d-sm-table-cell"><span class="badge badge-success">Open</span></td>
                       </tr>
                       <tr>
-                        <th>1 Brave</th>
-                        <td>Ms Mary</td>
+                        <th class="d-none d-sm-table-cell bg-secondary text-white">4</th>
+                        <th style="vertical-align: middle">1 Brave</th>
+                        <td style="vertical-align: middle">Ms Mary</td>
                         <td>15 students</td>
                         <td class="d-none d-sm-table-cell"><span class="badge badge-success">Open</span></td>
                       </tr>
                       <tr>
-                        <th>1 Hope</th>
-                        <td>Mr Dan</td>
+                        <th class="d-none d-sm-table-cell bg-secondary text-white">5</th>
+                        <th style="vertical-align: middle">1 Hope</th>
+                        <td style="vertical-align: middle">Mr Dan</td>
                         <td>15 students</td>
                         <td class="d-none d-sm-table-cell"><span class="badge badge-success">Open</span></td>
                       </tr>
