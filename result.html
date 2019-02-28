@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>e-class</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="e-class">
+    
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+  <!--DataTables-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-colvis-1.5.4/b-flash-1.5.4/b-html5-1.5.4/b-print-1.5.4/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-colvis-1.5.4/b-flash-1.5.4/b-html5-1.5.4/b-print-1.5.4/datatables.min.js"></script>
+    
+  <link rel="stylesheet" href="css/starter-template.css">
+  
+  <style>
+      body {
+          -webkit-user-select: none;
+          -webkit-tap-highlight-color: transparent;
+          -webkit-touch-callout: none;
+      }
+  </style>    
+  <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myClass tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-cog fa-spin"></i> e-Class</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown Open">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-info-circle"></i> General</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item active" href="class.html"><i class="fas fa-chalkboard-teacher"></i> Classroom</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Teachers</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-file-signature"></i> Homework</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"></i> Reports</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="result.html"><i class="fas fa-file-alt"></i> 1<sup>st</sup> Exam</a>
+              <a class="dropdown-item" href="result.html"><i class="fas fa-file-alt"></i> Mid Year Exam</a>
+              <a class="dropdown-item" href="result.html"><i class="fas fa-file-alt"></i> 2<sup>nd</sup> Exam</a>
+              <a class="dropdown-item" href="result.html"><i class="fas fa-file-alt"></i> Final Year Exam</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-comment-alt"></i> Feeds</a>
+          </li>
+        </ul>
+        <form class="form-inline my-1 my-lg-0">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search" aria-label="Search" required>
+              <div class="input-group-append">
+                <button class="btn btn-info my-sm-0" type="submit">Search</button>
+              </div>
+            </div>
+        </form>
+      </div>
+    </nav>
+    
+    <div class="container">
+        <h1 class="text-info">Reports</h1>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Exam Result</li>
+        </ul>   
+        
+        <div class="row">
+            
+            <div class="col-xl-4 col-lg-5">
+              <div class="card">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header">
+                  <h6 class="font-weight-bold">Exam Result 2019</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    Registered subject : <b class="text-info">6</b><br>
+                    Position in class : <b class="text-info">1</b> / 30<br>
+                    Overall position : <b class="text-info">1</b> / 30<br>
+                    Attendance : <b class="text-info">30</b> / 30 days<br>
+                    Overall Achievement Grade : <b class="text-info">6[A]</b><br>
+                    Total marks : <b class="text-info">600</b><br><br>
+                    
+                    Percentage : <b class="text-info">100%</b><br>
+                    Average Grade : <b class="text-info">4.00</b><br>
+                    Result : <b class="text-info">EXCELLENT</b><br><br>
+                    
+                    Homeroom Teacher : <b class="text-info">Teacher name</b>
+                    Comments : <b class="text-info">Best student ever</b>
+
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-xl-8 col-lg-7">
+                
+                <table id="result" class="table table-bordered text-center">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th width="5%">No</th>
+                        <th>Subject</th>
+                        <th width="10%" class="d-none d-sm-table-cell">Marks</th>
+                        <th width="10%">Grade</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="bg-light">1</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>            
+                      <tr>
+                        <th class="bg-light">2</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>            
+                      <tr>
+                        <th class="bg-light">3</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>            
+                      <tr>
+                        <th class="bg-light">4</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>            
+                      <tr>
+                        <th class="bg-light">5</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>            
+                      <tr>
+                        <th class="bg-light">6</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>            
+                      <tr>
+                        <th class="bg-light">7</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>
+                      <tr>
+                        <th class="bg-light">8</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>
+                      <tr>
+                        <th class="bg-light">9</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>
+                      <tr>
+                        <th class="bg-light">10</th>
+                        <td>Subject name</td>
+                        <td class="text-success d-none d-sm-table-cell"><b>100%</b></td>
+                        <td class="text-success"><b>A+</b></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+            </div>
+                
+        </div>
+        
+    </div>
+    <script>
+        $(document).ready( function () {
+            $('#result').DataTable({
+                dom: 'rt'
+            });
+        } );
+    </script>
+</body>
+</html>
