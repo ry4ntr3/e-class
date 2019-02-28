@@ -17,12 +17,6 @@
   <!-- Font Awesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     
-  <!--DataTables-->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-colvis-1.5.4/b-flash-1.5.4/b-html5-1.5.4/b-print-1.5.4/datatables.min.css"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-colvis-1.5.4/b-flash-1.5.4/b-html5-1.5.4/b-print-1.5.4/datatables.min.js"></script>
-    
   <link rel="stylesheet" href="css/starter-template.css">
   
   <style>
@@ -98,7 +92,7 @@
         <div class="row">
             
             <div class="col-xl-4 col-lg-5">
-              <div class="card">
+              <div class="card mb-3">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header">
                   <h6 class="font-weight-bold">Exam Result 2019</h6>
@@ -125,7 +119,7 @@
             
             <div class="col-xl-8 col-lg-7">
                 
-                <table id="result" class="table table-bordered text-center">
+                <table class="table table-bordered text-center">
                     <thead class="thead-dark">
                       <tr>
                         <th width="5%">No</th>
@@ -203,12 +197,6 @@
         </div>
         
     </div>
-    <script>
-        $(document).ready( function () {
-            $('#result').DataTable({
-                dom: 'rt'
-            });
-        } );
-    </script>
+    
 </body>
 </html>
